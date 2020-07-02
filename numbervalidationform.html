@@ -1,0 +1,70 @@
+<html><head>
+<script type="text/javascript">
+function validate(){
+var num=document.myform.num.value;
+if (isNaN(num)){
+  document.getElementById("numloc").innerHTML="Enter Numeric value only";
+  return false;
+}
+else if(num.length==10)
+{
+ alert("Entered Phone Number is Valid");
+  }
+else{
+ document.getElementById("numloc").innerHTML="Enter 10 digit phno only";
+  return false;
+}
+var pn=document.myform.num.value;
+var ae=document.getElementById("ae").checked;
+var de=document.getElementById("de").checked;
+var ss=document.getElementById("ss").checked;
+var lica=document.getElementById("lica").checked;
+var pp=document.getElementById("pp").checked;
+var es=document.getElementById("es").checked;
+document.write("<br> Phone Number :"+pn+"<br> Subjects Interested in :<br>");
+if(ae==true)
+{
+	document.write("AE<br>");
+}
+if(de==true)
+{
+	document.write("De<br>");
+}
+if(ss==true)
+{
+	document.write("SS<br>");
+}
+if(lica==true)
+{
+	document.write("LICA<br>");
+}
+if(pp==true)
+{
+	document.write("PP<br>");
+}
+if(es==true)
+{
+	document.write("ES<br>");
+}
+const checkboxes = document.querySelectorAll('input[name="si"]:checked');
+}
+</script></head>
+<body>
+<form name="myform"       onsubmit="return validate()" >
+<br>
+<h3>Registration details</h3>
+<br>
+Number: <input type="text" name="num"><span id="numloc"></span><br/>
+<br>
+<p>Enter your subject intrests :</p>
+<br>
+Analog Electronics: <input type="checkbox" name="sub" value="ae" id="ae"><br>
+Digital Electronics: <input type="checkbox" name="sub"  value="de" id="de"><br>
+Signals And systems: <input type="checkbox" name="sub" value="ss"  id="ss"><br>
+Linear IC's: <input type="checkbox" name="sub"  value="lica" id="lica"><br>
+Peral And Python: <input type="checkbox" name="sub"  value="pp" id="pp"><br>
+Embeded Systems: <input type="checkbox" name="sub"  value="es" id="es">
+<br>
+<input type="submit" value="submit">
+</body>
+</html>
